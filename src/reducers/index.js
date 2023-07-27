@@ -1,6 +1,7 @@
 import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
 import { CLEAR_DISPLAY } from './../actions';
 import { CUR_MEMORY } from './../actions';
+import { ADD_MEMORY } from './../actions';
 
 export const initialState = {
     total: 0,
@@ -50,6 +51,12 @@ const reducer = (state, action) => {
                 ...state,
                 memory: state.total
             });
+
+            case ADD_MEMORY:
+                return {
+                  ...state,
+                  memory: state.total + state.memory, // Store the current total value in memory
+                };
    
             
         default:
