@@ -25,7 +25,7 @@ const reducer = (state, action) => {
                 total: state.total + 1
             });
 
-        case(APPLY_NUMBER):
+        case(APPLY_NUMBER): //HERE
             return ({ 
                 ...state, 
                 total: calculateResult(state.total, action.payload, state.operation)
