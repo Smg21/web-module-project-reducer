@@ -4,7 +4,7 @@ import reducer, { initialState } from '../reducers'
 import { addOne } from '../actions';
 import { applyNumber } from '../actions';
 import { change_operation } from '../actions';
-
+import { clear_display } from '../actions';
 import './App.css';
 
 import TotalDisplay from './TotalDisplay';
@@ -16,6 +16,10 @@ function App() {
   const handleAddOne = () => {
     dispatch(addOne()); // Dispatch the addOne action creator! DISPATCH
   };
+
+  const handleClear = () => {
+    dispatch(clear_display());
+  }
 
   const handleOperation = (operation) => {
     dispatch(change_operation(operation));
@@ -72,7 +76,7 @@ function App() {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton onClick = {() => handleClear()} value={"CE"}/>
             </div>
 
           </form>
