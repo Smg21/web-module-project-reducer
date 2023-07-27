@@ -7,6 +7,7 @@ import { change_operation } from '../actions';
 import { clear_display } from '../actions';
 import { cur_memory } from '../actions';
 import { add_memory } from '../actions';
+import { zero_memory } from './../actions';
 
 import './App.css';
 
@@ -22,6 +23,10 @@ function App() {
 
   const curMemory = () => {
     dispatch(cur_memory());
+  }
+
+  const zeroMemory = () => {
+    dispatch(zero_memory());
   }
 
   const handleClear = () => {
@@ -59,7 +64,7 @@ function App() {
             <div className="row">
               <CalcButton onClick={curMemory} value={"M+"}/>
               <CalcButton onClick={addMemory} value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick={zeroMemory} value={"MC"}/>
             </div>
       
             <div className="row">
