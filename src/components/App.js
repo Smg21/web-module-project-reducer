@@ -5,6 +5,8 @@ import { addOne } from '../actions';
 import { applyNumber } from '../actions';
 import { change_operation } from '../actions';
 import { clear_display } from '../actions';
+import { cur_memory } from '../actions';
+
 import './App.css';
 
 import TotalDisplay from './TotalDisplay';
@@ -16,6 +18,10 @@ function App() {
   const handleAddOne = () => {
     dispatch(addOne()); // Dispatch the addOne action creator! DISPATCH
   };
+
+  const curMemory = () => {
+    dispatch(cur_memory());
+  }
 
   const handleClear = () => {
     dispatch(clear_display());
@@ -46,7 +52,7 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
+              <CalcButton onClick={curMemory} value={"M+"}/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>
